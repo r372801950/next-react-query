@@ -12,7 +12,7 @@ export function PokemonInfo() {
   return (
     <div>
       <figure>
-        <Image src={data.sprites.front_shiny} width={200} height={200} alt={data.name} priority />
+        <Image src={data.sprites.front_shiny} width={200} height={200} alt={data.name} priority fetchPriority="high" />
         <h2>I&apos;m {data.name}</h2>
       </figure>
     </div>

@@ -3,6 +3,7 @@ import type React from 'react'
 import type { Metadata } from 'next'
 import "./globals.css";
 import {NavBar} from "@/components/nav-bar";
+import {LCPMonitor} from "@/components/perf/LCPMonitor";
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,6 +22,7 @@ export default function RootLayout({
           <NavBar />
           {children}
         </Providers>
+        <LCPMonitor/>
       </body>
     </html>
   )
