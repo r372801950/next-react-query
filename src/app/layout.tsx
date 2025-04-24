@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import "./globals.css";
 import {NavBar} from "@/components/nav-bar";
 import {LCPMonitor} from "@/components/perf/LCPMonitor";
+import {NavHoc} from "@/components/nav-hoc";
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,11 +16,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const IsAdminNavBar = NavHoc(NavBar)
   return (
     <html lang="en">
       <body>
         <Providers>
-          <NavBar />
+          <IsAdminNavBar options={[{name:'HOC权限',href:'/pokemon'}]} />
           {children}
         </Providers>
         <LCPMonitor/>
